@@ -517,7 +517,7 @@
 				{ "name": "source/physics/breakable_surfaces.c", "index": 145, "status": "NonMatching" },
 				{ "name": "source/objects/scenery_group.c", "index": 146, "status": "Matching" },
 				{ "name": "source/objects/scenery.c", "index": 147, "status": "NonMatching" },
-				{ "name": "source/objects/placeholder_definitions.c", "index": 148, "status": "NonMatching" },
+				{ "name": "source/objects/placeholder_definitions.c", "index": 148, "status": "Matching" },
 				{ "name": "source/objects/objects.c", "index": 149, "status": "NonMatching" },
 				{ "name": "source/objects/object_types.c", "index": 150, "status": "NonMatching" },
 				{ "name": "source/objects/object_shadows.c", "index": 151, "status": "NonMatching" },
