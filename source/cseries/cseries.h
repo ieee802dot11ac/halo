@@ -95,8 +95,6 @@ typedef byte boolean;
 
 typedef unsigned long tag;
 
-typedef float real;
-
 /* ---------- prototypes/CSERIES.C */
 
 void cseries_initialize(void);

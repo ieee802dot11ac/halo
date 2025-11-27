@@ -1,35 +1,55 @@
 /*
 PLACEHOLDER_DEFINITIONS.C
-
-symbols in this file:
-00134D00 0010:
-	_placeholder_initialize (0000)
-00134D10 0010:
-	_placeholder_initialize_for_new_map (0000)
-00134D20 0010:
-	_placeholder_dispose_from_old_map (0000)
-00134D30 0010:
-	_placeholder_dispose (0000)
-00134D40 0010:
-	_placeholder_place (0000)
-00134D50 0010:
-	_placeholder_new (0000)
-00134D60 0010:
-	_placeholder_delete (0000)
 */
 
 /* ---------- headers */
 
-/* ---------- constants */
-
-/* ---------- macros */
-
-/* ---------- structures */
-
-/* ---------- prototypes */
-
-/* ---------- globals */
+#include "cseries.h"
+#include "placeholder_definitions.h"
+#include "real_math.h"
+#include "scenario_definitions.h"
 
 /* ---------- public code */
 
-/* ---------- private code */
+void placeholder_initialize(
+	void)
+{
+	return;
+}
+
+void placeholder_initialize_for_new_map(
+	void)
+{
+	return;
+}
+
+void placeholder_dispose_from_old_map(
+	void)
+{
+	return;
+}
+
+void placeholder_dispose(
+	void)
+{
+	return;
+}
+
+void placeholder_place(
+	long placeholder_index,
+	struct scenario_placeholder_datum *scenario_placeholder)
+{
+	return;
+}
+
+boolean placeholder_new(
+	long object_index)
+{
+	return TRUE;
+}
+
+void placeholder_delete(
+	long placeholder_index)
+{
+	return;
+}

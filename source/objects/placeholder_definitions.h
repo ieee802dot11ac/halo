@@ -16,6 +16,14 @@ header included in hcex build.
 
 /* ---------- prototypes/EXAMPLE.C */
 
+void placeholder_initialize(void);
+void placeholder_initialize_for_new_map(void);
+void placeholder_dispose_from_old_map(void);
+void placeholder_dispose(void);
+void placeholder_place(long placeholder_index, struct scenario_placeholder_datum *scenario_placeholder);
+boolean placeholder_new(long object_index);
+void placeholder_delete(long placeholder_index);
+
 /* ---------- globals */
 
 /* ---------- public code */
