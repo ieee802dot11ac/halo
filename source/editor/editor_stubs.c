@@ -1,39 +1,64 @@
 /*
 EDITOR_STUBS.C
-
-symbols in this file:
-00085E50 0010:
-	_editor_render (0000)
-00085E60 0010:
-	_game_in_editor (0000)
-00085E70 0010:
-	_editor_preprocess_rendered_object (0000)
-00085E80 0010:
-	_editor_should_exit (0000)
-00085E90 0010:
-	_editor_initialize (0000)
-00085EA0 0010:
-	_editor_dispose (0000)
-00085EB0 0010:
-	_editor_update (0000)
-00085EC0 0010:
-	_editor_initialize_for_new_map (0000)
-00085ED0 0010:
-	_editor_dispose_from_old_map (0000)
 */
 
 /* ---------- headers */
 
-/* ---------- constants */
-
-/* ---------- macros */
-
-/* ---------- structures */
-
-/* ---------- prototypes */
-
-/* ---------- globals */
+#include "cseries.h"
+#include "editor_stubs.h"
 
 /* ---------- public code */
 
-/* ---------- private code */
+void editor_render(
+	void)
+{
+	return;
+}
+
+boolean game_in_editor(
+	void)
+{
+	return FALSE;
+}
+
+boolean editor_preprocess_rendered_object(
+	void)
+{
+	return TRUE;
+}
+
+boolean editor_should_exit(
+	void)
+{
+	return FALSE;
+}
+
+void editor_initialize(
+	void)
+{
+	return;
+}
+
+void editor_dispose(
+	void)
+{
+	return;
+}
+
+void editor_update(
+	void)
+{
+	return;
+}
+
+void editor_initialize_for_new_map(
+	void)
+{
+	return;
+}
+
+void editor_dispose_from_old_map(
+	void)
+{
+	return;
+}
