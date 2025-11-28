@@ -201,8 +201,26 @@ struct gamepad_state
 
 /* ---------- prototypes/INPUT_XBOX.C */
 
-void input_dispose();
-void input_initialize();
+short fix_dead_zone(short value, short dead_range);
+void update_ticks(byte *ticks, boolean down);
+void input_dispose(void);
+void input_activate(void);
+void input_deactivate(void);
+void input_flush(void);
+boolean input_key_is_down(short key_code);
+boolean input_get_key(struct key_stroke *key);
+const struct mouse_state *input_get_mouse_state(void);
+void input_suppress(void);
+boolean input_mouse_button_is_down(short button_index);
+boolean input_has_gamepad(short gamepad_index);
+const struct gamepad_state *input_get_gamepad_state(short gamepad_index);
+void input_set_gamepad_rumbler_state(short gamepad_index, unsigned short left_speed, unsigned short right_speed);
+void input_vertical_blank_interrupt(void);
+void input_get_raw_data_string(char *buffer, short size);
+void input_update(void);
+void input_frame_begin(void);
+void input_frame_end(void);
+boolean input_initialize(void);
 
 /* ---------- globals */
 
