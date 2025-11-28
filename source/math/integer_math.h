@@ -26,6 +26,8 @@ union rectangle2d
 };
 typedef union rectangle2d rectangle2d;
 
+typedef unsigned long pixel32;
+
 /* ---------- prototypes/INTEGER_MATH.C */
 
 /* ---------- globals */

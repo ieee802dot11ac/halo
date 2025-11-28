@@ -31,6 +31,28 @@ union real_point3d
 };
 typedef union real_point3d real_point3d;
 
+union real_rgb_color
+{
+	real n[3];
+	struct { real red, green, blue; };
+};
+typedef union real_rgb_color real_rgb_color;
+
+union real_argb_color
+{
+	real n[4];
+	struct
+	{
+		real alpha;
+		union
+		{
+			real_rgb_color rgb;
+			struct { real red, green, blue; };
+		};
+	};
+};
+typedef union real_argb_color real_argb_color;
+
 /* ---------- prototypes/REAL_MATH.C */
 
 void real_math_initialize(void);
