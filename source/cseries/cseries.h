@@ -117,7 +117,7 @@ char *csstrncat(char *s1, const char *s2, unsigned long size);
 long csstrncmp(const char *s1, const char *s2, unsigned long size);
 char *csstrncpy(char *s1, const char *s2, unsigned long size);
 char *csstrtok(char *s1, const char *s2);
-long csstrlen(const char *s1);
+unsigned long csstrlen(const char *s1);
 char *csstrcpy(char *destination, const char *source);
 void *csmemcpy(void *destination, const void *source, unsigned long size);
 long csstrcasecmp(const char *s1, const char *s2);
