@@ -51,7 +51,7 @@ union real_vector2d
 	real n[2];
 	struct { real i; real j; };
 };
-typedef union real_point2d real_point2d;
+typedef union real_vector2d real_vector2d;
 
 union real_vector3d
 {
