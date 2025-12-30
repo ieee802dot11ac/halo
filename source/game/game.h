@@ -10,6 +10,15 @@ header included in hcex build.
 
 /* ---------- constants */
 
+enum
+{
+	_game_connection_local= 0,
+	_game_connection_network_client,
+	_game_connection_network_server,
+	_game_connection_film_playback,
+	NUMBER_OF_GAME_CONNECTIONS,
+};
+
 /* ---------- macros */
 
 /* ---------- structures */
@@ -63,6 +72,10 @@ real game_time_get_speed(void);
 void game_time_set_speed(real speed);
 void game_time_start(void);
 void game_time_update(real time_delta_sec);
+
+/* ---------- prototypes/MAIN.C */
+
+short game_connection(void);
 
 /* ---------- globals */
 
