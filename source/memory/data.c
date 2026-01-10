@@ -42,6 +42,15 @@ void data_verify(
 			data));
 }
 
+static void datum_initialize(struct data_array *data, struct datum_header *header) {
+	memset(header, 0, data->size);
+	header->identifier = data->next_identifier;
+	data->next_identifier++;
+	if (data->next_identifier == 0) {
+		data->next_identifier = 0x8000;
+	}
+}
+
 struct data_array *data_new(
 	const char *name, 
 	short maximum_count, 
@@ -76,6 +85,7 @@ long datum_new_at_index(
 {
 	data_verify(data);
 	match_assert("c:\\halo\\SOURCE\\memory\\data.c", 123, data->valid);
+	datum_initialize(data, (struct datum_header*)((byte *)data->data + (data->first_free_absolute_index * data->size)));
 }
 
 long datum_new(
@@ -99,18 +109,13 @@ long datum_new(
 	// 		return -1;
 	// 	}
 	// }
-	memset(datum_position, 0, data->size);
-	*(short*)datum_position = data->next_identifier;
-	data->next_identifier++;
-	if (data->next_identifier == 0) {
-		data->next_identifier = 0x8000;
-	}
+	datum_initialize(data, (struct datum_header *)datum_position);
 	data->actual_count++;
 	data->first_free_absolute_index = offset + 1;
 	if (data->count <= offset) {
 		data->count = offset + 1;
 	}
-	return (*(short*)datum_position << 16) | offset;
+	return (((struct datum_header*)datum_position)->identifier << 16) | offset;
 }
 
 /* ---------- private code */
