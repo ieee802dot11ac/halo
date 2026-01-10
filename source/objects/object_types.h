@@ -49,11 +49,33 @@ enum
 
 /* ---------- structures */
 
-struct object_type_definition {
+struct object_type_definition 
+{
 	char* name;
 	unsigned long group_tag;
 	short datum_size;
-	byte padc_pad9c[0x90];
+	byte pada_pad10[0x6];
+	void (*initialize)(void);
+	void (*dispose)(void);
+	void (*initialize_for_new_map)(void);
+	void (*dispose_from_old_map)(void);
+	long pad20;
+	void (*new)(void);
+	long pad28;
+	void (*delete)(void);
+	void (*update)(void);
+	void (*export_function_values)(void);
+	void (*handle_deleted_object)(void);
+	void (*handle_region_destroyed)(void);
+	long pad40;
+	void (*preprocess_node_orientations)(void);
+	void (*postprocess_node_matrices)(void);
+	long pad4c;
+	long pad50;
+	void (*notify_impulse_sound)(void);
+	void (*render_debug)(struct object*);
+	struct object_type_definition* unk_0x5c;
+	byte pad60_pad9c[0x3c];
 	struct object_type_definition* next;
 };
 

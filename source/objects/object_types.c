@@ -5,6 +5,7 @@ OBJECT_TYPES.C
 /* ---------- headers */
 
 #include "cseries.h"
+#include "objects/objects.h"
 #include "object_types.h"
 
 /* ---------- constants */
@@ -13,6 +14,29 @@ struct object_type_definition object_data_definition = {
 	"object",
 	'obje',
 	420,
+	{0xFF,0xFF,0xFF,0xFF,0xFF,0xFF},
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	&object_render_debug,
+	0,
+	{0},
+	0
 };
 
 /* ---------- macros */
