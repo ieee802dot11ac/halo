@@ -182,11 +182,13 @@ const char* object_type_get_name(
 	return object_type_definitions[object_type]->name;
 }
 
-void object_types_initialize() {
+void object_types_initialize() 
+{
 
 }
 
-void object_types_dispose() {
+void object_types_dispose() 
+{
 	struct object_type_definition* definition = first_object_type_definition;
 	while (definition != 0) {
 		if (definition->dispose)
@@ -195,7 +197,8 @@ void object_types_dispose() {
 	}
 }
 
-void object_types_initialize_for_new_map() {
+void object_types_initialize_for_new_map() 
+{
 	struct object_type_definition* definition = first_object_type_definition;
 	bss_00456e98 = 0;
 	while (definition != 0) {
@@ -205,7 +208,8 @@ void object_types_initialize_for_new_map() {
 	}
 }
 
-void object_types_dispose_from_old_map() {
+void object_types_dispose_from_old_map() 
+{
 	struct object_type_definition* definition = first_object_type_definition;
 	while (definition != 0) {
 		if (definition->dispose_from_old_map)
