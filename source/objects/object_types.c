@@ -21,7 +21,9 @@ struct object_type_definition object_data_definition = {
 	"object",
 	'obje',
 	420,
-	{0xFF,0xFF,0xFF,0xFF,0xFF,0xFF},
+	-1,
+	-1,
+	-1,
 	0,
 	0,
 	0,
@@ -50,7 +52,9 @@ struct object_type_definition unit_data_definition = {
 	"unit",
 	'unit',
 	1060,
-	{0xFF,0xFF,0xFF,0xFF,0xFF,0xFF},
+	-1,
+	-1,
+	-1,
 	0,
 	0,
 	0,
@@ -75,7 +79,69 @@ struct object_type_definition unit_data_definition = {
 	0
 };
 
-struct object_type_definition* object_type_definitions[NUMBER_OF_OBJECT_TYPES] = {0};
+struct object_type_definition biped_data_definition = {
+	"biped",
+	'bipd',
+	1152,
+	552,
+	564,
+	120,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	{&object_data_definition, &unit_data_definition, &biped_data_definition},
+	{0},
+	0
+};
+
+struct object_type_definition vehicle_data_definition = {
+	"vehicle",
+	'vehi',
+	1148,
+	576,
+	588,
+	120,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	{&object_data_definition, &unit_data_definition, &vehicle_data_definition},
+	{0},
+	0
+};
+
+struct object_type_definition* object_type_definitions[NUMBER_OF_OBJECT_TYPES] = {&biped_data_definition};
 
 /* ---------- public code */
 

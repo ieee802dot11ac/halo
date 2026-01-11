@@ -54,7 +54,9 @@ struct object_type_definition
 	char* name;
 	unsigned long group_tag;
 	short datum_size;
-	byte pada_pad10[0x6];
+	short pada;
+	short padc;
+	short pade;
 	void (*initialize)(long);
 	void (*dispose)(long);
 	void (*initialize_for_new_map)(long);
@@ -67,7 +69,7 @@ struct object_type_definition
 	void (*export_function_values)(long);
 	void (*handle_deleted_object)(long);
 	void (*handle_region_destroyed)(long);
-	long pad40;
+	void (*handle_parent_destroyed)(long);
 	void (*preprocess_node_orientations)(long);
 	void (*postprocess_node_matrices)(long);
 	void (*reset)(long);
