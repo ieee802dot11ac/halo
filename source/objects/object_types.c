@@ -5,7 +5,6 @@ OBJECT_TYPES.C
 /* ---------- headers */
 
 #include "cseries.h"
-#include "objects/objects.h"
 #include "object_types.h"
 
 /* ---------- constants */
@@ -38,7 +37,6 @@ struct object_type_definition object_data_definition = {
 	0,
 	0,
 	0,
-	&object_export_function_values,
 	0,
 	0,
 	0,
@@ -47,9 +45,9 @@ struct object_type_definition object_data_definition = {
 	0,
 	0,
 	0,
-	&object_render_debug,
+	0,
+	0,
 	{&object_data_definition},
-	{0},
 	0
 };
 
@@ -80,7 +78,6 @@ struct object_type_definition unit_data_definition = {
 	0,
 	0,
 	{&object_data_definition, &unit_data_definition},
-	{0},
 	0
 };
 
@@ -111,7 +108,6 @@ struct object_type_definition biped_data_definition = {
 	0,
 	0,
 	{&object_data_definition, &unit_data_definition, &biped_data_definition},
-	{0},
 	0
 };
 
@@ -142,7 +138,6 @@ struct object_type_definition vehicle_data_definition = {
 	0,
 	0,
 	{&object_data_definition, &unit_data_definition, &vehicle_data_definition},
-	{0},
 	0
 };
 
@@ -150,7 +145,7 @@ struct object_type_definition* object_type_definitions[NUMBER_OF_OBJECT_TYPES] =
 
 /* ---------- public code */
 
-void* object_type_definition_get(
+struct object_type_definition* object_type_definition_get(
 	short object_type)
 {
 	match_vassert(
@@ -172,10 +167,10 @@ short object_type_get_datum_size(
 		object_type>=0 && object_type<NUMBER_OF_OBJECT_TYPES,
 		csprintf(temporary, "#%d isn't a valid object type in [#0,#%d)", object_type, NUMBER_OF_OBJECT_TYPES));
 	match_assert("c:\\halo\\SOURCE\\objects\\object_types.c", 643, object_type_definitions[object_type]);
-	return object_type_definitions[object_type]->datum_size;
+	return object_type_definitions[object_type]->game_datum_size;
 }
 
-char* object_type_get_name(
+const char* object_type_get_name(
 	short object_type)
 {
 	match_vassert(
@@ -218,6 +213,8 @@ void object_types_dispose_from_old_map() {
 		definition = definition->next;
 	}
 }
+
+/* // uncomment this block when pr 12 gets merged
 
 void object_type_adjust_placement(long object_index, void* unk) {
 	struct object* o = object_get_and_verify_type(object_index, _object_mask_all);
@@ -435,5 +432,7 @@ void object_type_notify_impulse_sound(long object_index, void* unk, void* unk2) 
 		typelist = &basetype->inheritance[type_index];
 	}
 }
+
+*/
 
 /* ---------- private code */
